@@ -8,7 +8,7 @@ var resumeFormat = {
     "phone": "802-734-1161",
     "degree": "MPA, B.Sc.",
     "website": "",
-    "summary": "I am a self-taught software engineer, and community developer with expertise in frontend development, team leadership and program management. I am passionate about work that has positive impact community health and sustainability. I am currently seeking a position as a frontend software engineer in New York City.",
+    "summary": "I am a self-taught software engineer with expertise in front end development, and a community developer with experience in program management and team leadership. I am passionate about work that has a positive impact on community health and sustainability. I am currently seeking a position as a front end software engineer in New York City.",
     "highlights": null,
     "location": {
       "address": "620 Veterans Blvd, 308",
@@ -112,27 +112,28 @@ var ResumeData = {
 ///JOBS
 var freeCodeCamp = ResumeData.addJob(
     "Self-Taught Software Engineer",
-    "freeCodeCamp",
+    "freeCodeCamp; ",
     "2016",
 	"",
-    "After moving to the Bay Area, I decided to pursue my strong interest in programming. I am following freeCodeCamp's model to become a full stack software engineer. I am also involved in a cohort of other learners organized by the freeCodeCamp community to facilitate pair-programming, team projects and a community-oriented learning environment.",
+    "After moving to the Bay Area, I decided to pursue my longtime interest in programming. I am following freeCodeCamp's model to become a full stack software engineer. This includes building solutions to their interesting challenges, and  collaborating with a cohort of other freeCodeCamp learners for pair-programming, team projects, and building larger scale collaborative projects.",
     [
-        "Completing a project based curriculum that requires a mastery of the fundamentals of full stack software engineering.",
-        "Maintaining a clear direction, focus, and discipline to achieve personal mastery of a new skillset.",
-        "Networking with other learners to build cooperative, engaging and rich learning environments.",
-    ]
+    "Completing a project-based curriculum that requires a mastery of the fundamentals of full stack software engineering.",
+    "Built projects that developed my expertise in: React, Javascript, nodeJS, API development, test-driven development, algorithms, and more; please check out my project portfolio for examples.",
+    ],
+    "Pausing my career momentum in community development was a challenging decision, but moving across the country to the heart of Silicon Valley provided the opportunity and natural timing to invest my energy in this new career direction. It is exciting and gratifying to ramp up and follow my passion in this important, cutting edge industry."
+
 )
 var programManager = ResumeData.addJob(
     "Way2Go Program Manager",
     "Cornell Cooperative Extension",
     "2013",
 	"2016",
-    "After a year at Cornell Extension I was promoted to the leadership position of Way2Go, a transportation education and outreach program. I managed a team of community educators that led programs designed to address people's transportaiton needs in Tompkins County. Under my leadership, I expanded Way2Go regionally and supported a sister program in Utica, NY, I grew the biannual Streets Alive event by building partnerships and event sponsors, and recieved over $200K in new grants to support innovative programming",
+    "After a year at Cornell Extension I was promoted to lead the Way2Go program: a visionary transportation education and outreach program housed by Cornell Cooperative Extension. I managed a team of community educators that led programs designed to address people's transportation needs in Tompkins County. Under my leadership, Way2Go regionally and supported a sister program in Utica, NY, I grew the biannual Streets Alive event by building partnerships and event sponsors, and recieved over $200K in new grants to support innovative programming.",
     [
-        "Program direction and strategy for the Way2Go program through synthesizing input from community outreach with residents, local officials, and other partners",
-        "Recruit, hire, support and supervise a team of community educators and interns who are implementing programs",
-        "Secure funding to achieve Way2Go's Strategic Goals including over $100 thousand in funding for new progams",
-        "Oversee administrative tasks including reporting, budgeting, and grant wrtiing"
+        "Directed vision and strategy for the Way2Go program through synthesizing input from community outreach with residents, local officials, and other partners",
+        "Recruited, hired, and supervised a team of community educators and interns who are implementing programs.",
+        "Secured funding to achieve Way2Go's Strategic Goals including over $200K in funding for new progams.",
+        "Oversaw reporting, budgeting, grant writing, and other core program management tasks."
     ]
 )
 var travelTraining = ResumeData.addJob(
@@ -152,7 +153,7 @@ var ameriCorps = ResumeData.addJob(
     "American Red Cross/AmeriCorps",
     "2011",
 	"2012",
-    "After graduate school I served as an AmeriCorps volunteer with the American Red Cross. I was hired to coordinate a disaster preparedness education program in a three county region in upstate New York, right after major floods hit the region. I conducted disaster preparedness workshops, built relationships with program partners, recruited volunteers, and represented the American Red Cross at community events"
+    "After graduate school I served as an AmeriCorps educator with the American Red Cross. I was hired to coordinate a disaster preparedness education program in a three county region in upstate New York, right after major floods hit the region. I conducted disaster preparedness workshops, built relationships with program partners, recruited volunteers, and represented the American Red Cross at community events"
 )
 
 var researcher = ResumeData.addJob(
@@ -160,7 +161,7 @@ var researcher = ResumeData.addJob(
     "UVM Transportation Research Center",
     "2009",
 	"2011",
-    "When I was studying for my Master of Public Administration, I was also funded as a graduate research assistant at the Transportation Research Center. My research advisor, Richard Watts, and I had a research interest in how the media reports on transportation issues. We published several papers on how the media reports on vehicle emissions which also contributed to my Masters Thesis."
+    "I was selected for funding as a graduate research assistant at the Transportation Research Center while studying for my Master of Public Administration. My research advisor, Richard Watts, and I studied media reporting on transportation issues. We published several peer-reviewed papers on how the media reports on vehicle emissions (see my publication portfolio). This research formed the basis of my Masters Thesis."
 )
 
 //EDUCATION
@@ -170,14 +171,14 @@ var codeCampEducation = ResumeData.addEducation(
 	"",
     "freeCodeCamp",
     "I am learning full stack software engineering with a focus on javascript. I have completed the full stack certification and am currently working through Data Visualization, and Back End Certification programs.",
-    "Thesis: The Social Construction and Framing of Tailpipe Emissions in the Media. /n Honors: Transportation Research Center Student of the Year 2011"
 )
 var MPA = ResumeData.addEducation(
     "Masters of Public Administration",
     "2009",
 	"2011",
     "University of Vermont",
-    "The Masters of Public Administration Program provided me with theoretical and practical foundations of public administration focusing on the complexity of governance systems and the democratic, collaborative traditions. The curriculum focused on a range of areas to prepare dynamic leaders in public and not-profit work: public budgeting, policy analysis, sustainable transportation systems, governance, and public policy."
+    "The Masters of Public Administration Program provided me with theoretical and practical foundations of public administration focusing on the complexity of governance systems and the democratic, collaborative traditions. The curriculum focused on a range of areas to prepare dynamic leaders in public and not-profit work: public budgeting, policy analysis, sustainable transportation systems, governance, and public policy.",
+    "Thesis: The Social Construction and Framing of Tailpipe Emissions in the Media. /n Honors: Transportation Research Center Student of the Year 2011"
 )
 var CDAE = ResumeData.addEducation(
     "B.S. Community and International Development",
