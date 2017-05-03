@@ -6,30 +6,48 @@ function FormSection(keyTypePairs) {
 FormSection.prototype.returnKeys = function() {
     return Object.keys(this)
 }
-FormSection.prototype.createListObject = function (sectionId, key) {
-    var item;
-    if(key ==='profiles') {
-        item = new FormSection({
-            network: 'string',
-            url: 'string',
-            username: 'string'
-        })
-    }
-    Basics[key].push(item)
-    item.returnKeys().forEach((key) => $('#profiles').append(item.renderFormItem(key)));
+function createWorkPrototype() {
+    return new FormSection({
+        company: 'string',
+        position: 'string',
+        website: 'string',
+        startData: 'string',
+        endDate: 'string',
+        summary: 'string',
+        highlights: 'string-list'
+    })
 }
-FormSection.prototype.returnButton = function(section, key) {
-    return "<button onClick='Basics.createListObject(\"Basics\", \"" + key + "\")'> Add </button>"    
+function createProfilePrototype(){
+    return new FormSection({
+        network: 'string',
+        url: 'string',
+        username: 'string'
+    })
 }
 
-FormSection.prototype.renderFormItem = function (key) {
+FormSection.prototype.createListObject = function (jsonkey, key) {
+    var item;
+    if(key ==='profiles') {
+        item = createProfilePrototype()
+    } else if (key === 'work') {
+       item = createWorkPrototype() 
+    }
+
+    formJson[jsonkey][key].push(item)
+    item.returnKeys().forEach((key) => $('#'+jsonkey).append(item.renderFormItem(key, jsonkey)));
+}
+FormSection.prototype.returnButton = function(key, jsonkey) {
+    return "<button onClick='Basics.createListObject(\""+ jsonkey+"\", \"" + key + "\")'> Add </button>"    
+}
+
+FormSection.prototype.renderFormItem = function (key, jsonkey) {
     if(this[key] === 'string') {
         return '<h5 id=\''+key+'\'>'+key+'<br><input></h5>'
     } else if (this[key] === 'long-string') {
         return '<h5 id=\''+key+'\'>'+ key + '</h5><textarea></textarea>'
     } else if (Array.isArray(this[key])) {
        var heading = '<h5 id=\''+key+'\'>'+key+'</h5>';
-       var button = this.returnButton(Basics, key)    
+       var button = this.returnButton(key, jsonkey)    
        return heading+button
     } else if (typeof(this[key]) ==='object') {  
         var subForm ='<h5 id=\''+key+'\'>'+key+'</h5>'
@@ -41,6 +59,10 @@ FormSection.prototype.renderFormItem = function (key) {
     }
 };
 
+function renderJson (object, jsonkey) {
+  console.log(object, jsonkey)
+  object.returnKeys().forEach((key) => $('#'+jsonkey).append(object.renderFormItem(key, jsonkey)))
+}   
 
 var Basics = new FormSection({
     name: 'string',
@@ -60,14 +82,22 @@ var Basics = new FormSection({
     profiles: []
 });
 
+var formJson = {}
+
+formJson.basics = Basics
+formJson.work = []
 var form = $('#form')
 
 //Test of Basics Section - Should be written up as an object method.
 form.append('<div id=\'basics\'><h1 class=\'sectionHeading basics\'>Basics</h1>')
-
-Basics.returnKeys().forEach((key) => $('#basics').append(Basics.renderFormItem(key)))
-
-console.log(Basics.returnKeys());
+form.append('</div><div id=\'work\'><h1 class=\'sectionHeading work\'>Work</h1>')
+Object.keys(formJson).forEach((key) => Array.isArray(formJson[key]) ? 
+    formJson[key].length === 0 ? 
+       null/* formJson[key].push(FormSection.createListObject(key)) */    :
+        formJson[key].forEach((item) => renderJson(item)) : 
+    renderJson(formJson[key], key) 
+)
+    
 
 var resumeFormat = {
   "basics": {
